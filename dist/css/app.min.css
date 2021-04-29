@@ -39,6 +39,21 @@ a:hover {
   -o-object-fit: contain;
   object-fit: contain
 }
+.scroll-top {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 40px;
+  bottom: 80px;
+  z-index: 111;
+  transition: .4s;
+  background-color: #f2ab99;
+  border-radius: 50%
+}
+.scroll-top.show {
+  display: block
+}
 .header .header-inner .header-logo {
   max-width: 65px
 }
@@ -57,8 +72,9 @@ a:hover {
 .header .header-inner .header-socials .social a i {
   font-size: 25px
 }
-.socials i.fa-tiktok {
-  font-size: 22px
+.social i.fa-tiktok {
+  padding-top: 3px;
+  font-size: 22px!important
 }
 .footer .footer-inner .footer-socials .social,
 .header .header-inner .header-socials .social {
@@ -204,8 +220,7 @@ a:hover {
   background: center/cover no-repeat fixed url(../images/dest/gradient.jpg)
 }
 .main .blocks-wrapper {
-  padding: 60px 20%;
-  margin-bottom: 70px
+  padding: 60px 20%
 }
 .main .blocks-wrapper .blocks-inner .block {
   display: flex;
@@ -257,6 +272,9 @@ a:hover {
 .footer .footer-inner {
   padding: 38px 0
 }
+.footer a:hover {
+  color: #9dcfce
+}
 .info-block:nth-of-type(1) {
   background-color: #9dcfce
 }
@@ -289,7 +307,7 @@ a:hover {
   transform: translate(-50%,-50%);
   position: absolute;
   top: 55px;
-  right: 0;
+  right: 56px;
   width: 30px
 }
 .center-menu div,
@@ -360,15 +378,28 @@ a:hover {
   }
 }
 @media only screen and (max-width:768px) {
+  .run-stripe {
+    font-size: 19px
+  }
+  .main .section-top .gradient-block {
+    height: calc(100vh - 93px)
+  }
   .main .section-top .center-block .video-block {
     margin-bottom: 20px;
     width: 100%
+  }
+  .info-container > div:nth-of-type(2) {
+    order: 3
+  }
+  .info-container > div:nth-of-type(3) {
+    order: 2
   }
   .main .section-top .center-block .video-wrapper {
     width: 100%
   }
   .center-menu {
-    top: 45px
+    top: 47px;
+    right: 17px
   }
   .main .section-top .center-block .video-block .laptop .video-wrapper iframe {
     width: 100%!important
@@ -386,8 +417,7 @@ a:hover {
     font-size: 30px;
     letter-spacing: 6px
   }
-  .main .blocks-wrapper .blocks-inner .block:not(:last-of-type),
-  .main .blocks-wrapper .blocks-inner .block:nth-child(-n+4) {
+  .main .blocks-wrapper .blocks-inner .block:not(:nth-last-of-type(-n+2)) {
     margin-bottom: 50px
   }
   .info-container {
@@ -402,5 +432,18 @@ a:hover {
   .bottom-block .container {
     padding-right: 15px;
     padding-left: 15px
+  }
+}
+@media only screen and (max-width:576px) {
+  .container.video-container {
+    padding-left: 0;
+    padding-right: 0
+  }
+  .container.video-container .video-wrapper iframe {
+    max-height: 280px
+  }
+  .scroll-top {
+    right: 20px;
+    bottom: 30px
   }
 }
