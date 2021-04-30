@@ -49,10 +49,20 @@ a:hover {
   z-index: 111;
   transition: .4s;
   background-color: #f2ab99;
-  border-radius: 50%
+  border-radius: 50%;
+  border: 2px solid #000;
+  transition: .4s
+}
+.scroll-top:hover {
+  border: 2px solid #9dcfce
 }
 .scroll-top.show {
-  display: block
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.scroll-top.show i {
+  font-size: 20px
 }
 .header .header-inner .header-logo {
   max-width: 65px
